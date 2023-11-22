@@ -1,5 +1,12 @@
 FROM ruby:3.1
 
+RUN apt-get update -qq && apt-get install -y \
+    build-essential \
+    libsdl2-dev \
+    libgl1-mesa-dev \
+    libgmp-dev \
+    libfontconfig1-dev
+
 RUN mkdir /myapp
 WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile

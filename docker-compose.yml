@@ -9,7 +9,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ./tmp/db:/var/lib/mysql
+      - sql-data:/var/lib/mysql
 
   web:
     build: .
@@ -20,3 +20,6 @@ services:
       - "3000:3000"
     depends_on:
       - db
+volumes:
+  sql-data:
+    driver: local
