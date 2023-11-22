@@ -1,0 +1,2 @@
+module GameWindowsHelper
+end
